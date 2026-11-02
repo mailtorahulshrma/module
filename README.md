@@ -1,7 +1,6 @@
 # module
 modules for terraform codes
-source for resource group = "https://github.com/mailtorahulshrma/module/tree/main/azurerm_resource_group"
-
-source for virtual_network = "https://github.com/mailtorahulshrma/module/tree/main/azurerm_virtual_network"
-source for subnet = "https://github.com/mailtorahulshrma/module/tree/main/azurerm_subnet"
-source for virtual machine = "https://github.com/mailtorahulshrma/module/tree/main/azurerm_virtual_machine"
+source for resource group = "git::https://github.com/mailtorahulshrma/module.git//azurerm_resource_group?ref=main"
+source for virtual_network = "git::https://github.com/mailtorahulshrma/module.git//azurerm_virtual_network?ref=main"
+source for subnet = "git::https://github.com/mailtorahulshrma/module.git//azurerm_subnet?ref=main"
+source for virtual machine = "git::https://github.com/mailtorahulshrma/module.git//azurerm_virtual_machine?ref=main"
