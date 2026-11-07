@@ -68,31 +68,31 @@ vms = {
       echo "DEV backend app-a-1" > /var/www/html/index.html
     EOT
   }
-  # app_a_2 = {
-  #   subnet_id            = "/subscriptions/b6821f5d-653e-4faa-8154-8314d9ce127e/resourceGroups/dev-rg/providers/Microsoft.Network/virtualNetworks/dev-vnet/subnets/dev-subnet-a"
-  #   resource_group_name  = "dev-rg"
-  #   nics_name            = "dev-app-a-2-nic"
-  #   internal_ip          = "Static"
-  #   private_ip_address   = "10.0.1.5"
-  #   vm_name              = "dev-app-a-2"
-  #   size                 = "Standard_D2alds_v7"
-  #   admin_username       = "azureadmin"
-  #   admin_password       = "ChangeThis!Dev12345"
-  #   caching              = "ReadWrite"
-  #   storage_account_type = "Standard_LRS"
-  #   publisher            = "Canonical"
-  #   offer                = "ubuntu-22_04-lts"
-  #   image_sku            = "server"
-  #   version              = "latest"
-  #   location             = "eastus"
-  #   custom_data          = <<-EOT
-  #     #!/bin/bash
-  #     apt-get update -y
-  #     apt-get install -y nginx
-  #     systemctl enable --now nginx
-  #     echo "DEV backend app-a-2" > /var/www/html/index.html
-  #   EOT
-  # }
+  app_a_2 = {
+    subnet_id            = "/subscriptions/b6821f5d-653e-4faa-8154-8314d9ce127e/resourceGroups/dev-rg/providers/Microsoft.Network/virtualNetworks/dev-vnet/subnets/dev-subnet-a"
+    resource_group_name  = "dev-rg"
+    nics_name            = "dev-app-a-2-nic"
+    internal_ip          = "Static"
+    private_ip_address   = "10.0.1.5"
+    vm_name              = "dev-app-a-2"
+    size                 = "Standard_D2alds_v7"
+    admin_username       = "azureadmin"
+    admin_password       = "Dev12345"
+    caching              = "ReadWrite"
+    storage_account_type = "Standard_LRS"
+    publisher            = "Canonical"
+    offer                = "ubuntu-22_04-lts"
+    image_sku            = "server"
+    version              = "latest"
+    location             = "eastus"
+    custom_data          = <<-EOT
+      #!/bin/bash
+      apt-get update -y
+      apt-get install -y nginx
+      systemctl enable --now nginx
+      echo "DEV backend app-a-2" > /var/www/html/index.html
+    EOT
+  }
   app_b_1 = {
     subnet_id            = "/subscriptions/b6821f5d-653e-4faa-8154-8314d9ce127e/resourceGroups/dev-rg/providers/Microsoft.Network/virtualNetworks/dev-vnet/subnets/dev-subnet-b"
     resource_group_name  = "dev-rg"
@@ -118,31 +118,31 @@ vms = {
       echo "DEV backend app-b-1" > /var/www/html/index.html
     EOT
   }
-  # app_b_2 = {
-  #   subnet_id            = "/subscriptions/b6821f5d-653e-4faa-8154-8314d9ce127e/resourceGroups/dev-rg/providers/Microsoft.Network/virtualNetworks/dev-vnet/subnets/dev-subnet-b"
-  #   resource_group_name  = "dev-rg"
-  #   nics_name            = "dev-app-b-2-nic"
-  #   internal_ip          = "Static"
-  #   private_ip_address   = "10.0.2.5"
-  #   vm_name              = "dev-app-b-2"
-  #   size                 = "Standard_D2alds_v7"
-  #   admin_username       = "azureadmin"
-  #   admin_password       = "ChangeThis!Dev12345"
-  #   caching              = "ReadWrite"
-  #   storage_account_type = "Standard_LRS"
-  #   publisher            = "Canonical"
-  #   offer                = "ubuntu-22_04-lts"
-  #   image_sku            = "server"
-  #   version              = "latest"
-  #   location             = "eastus"
-  #   custom_data          = <<-EOT
-  #     #!/bin/bash
-  #     apt-get update -y
-  #     apt-get install -y nginx
-  #     systemctl enable --now nginx
-  #     echo "DEV backend app-b-2" > /var/www/html/index.html
-  #   EOT
-  # }
+  app_b_2 = {
+    subnet_id            = "/subscriptions/b6821f5d-653e-4faa-8154-8314d9ce127e/resourceGroups/dev-rg/providers/Microsoft.Network/virtualNetworks/dev-vnet/subnets/dev-subnet-b"
+    resource_group_name  = "dev-rg"
+    nics_name            = "dev-app-b-2-nic"
+    internal_ip          = "Static"
+    private_ip_address   = "10.0.2.5"
+    vm_name              = "dev-app-b-2"
+    size                 = "Standard_D2alds_v7"
+    admin_username       = "azureadmin"
+    admin_password       = "Dev12345"
+    caching              = "ReadWrite"
+    storage_account_type = "Standard_LRS"
+    publisher            = "Canonical"
+    offer                = "ubuntu-22_04-lts"
+    image_sku            = "server"
+    version              = "latest"
+    location             = "eastus"
+    custom_data          = <<-EOT
+      #!/bin/bash
+      apt-get update -y
+      apt-get install -y nginx
+      systemctl enable --now nginx
+      echo "DEV backend app-b-2" > /var/www/html/index.html
+    EOT
+  }
 }
 
 internal_load_balancers = {
