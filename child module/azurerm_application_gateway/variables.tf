@@ -7,6 +7,7 @@ variable "application_gateways" {
     subnet_id            = string
     private_ip_address   = optional(string)
     public_ip_address_id = optional(string)
+    public_ip_name       = optional(string)
     backend_addresses    = list(string)
     sku_name             = optional(string, "Standard_v2")
     sku_tier             = optional(string, "Standard_v2")
@@ -33,8 +34,10 @@ variable "application_gateways" {
   validation {
     condition = alltrue([
       for gateway in values(var.application_gateways) :
-      (gateway.private_ip_address == null) != (gateway.public_ip_address_id == null)
+      (gateway.private_ip_address != null ? 1 : 0) +
+      (gateway.public_ip_address_id != null ? 1 : 0) +
+      (gateway.public_ip_name != null ? 1 : 0) == 1
     ])
-    error_message = "Each Application Gateway must configure exactly one private_ip_address or public_ip_address_id."
+    error_message = "Each Application Gateway must configure exactly one of private_ip_address, public_ip_address_id, or public_ip_name."
   }
 }

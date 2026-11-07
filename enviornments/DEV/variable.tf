@@ -26,3 +26,11 @@ variable "internal_load_balancers" {
 variable "application_gateways" {
   default = {}
 }
+
+variable "bastions" {
+  default = {}
+}
+
+variable "nat_gateways" {
+  default = {}
+}
