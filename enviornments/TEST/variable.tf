@@ -18,3 +18,11 @@ variable "private_dns_zones" {
 variable "private_endpoints" {
   default = {}
 }
+
+variable "internal_load_balancers" {
+  default = {}
+}
+
+variable "application_gateways" {
+  default = {}
+}

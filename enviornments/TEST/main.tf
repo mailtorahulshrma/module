@@ -45,3 +45,13 @@
 #   source            = "../../child module/azurerm_private_endpoint"
 #   private_endpoints = var.private_endpoints
 # }
+
+module "azurerm_internal_load_balancer" {
+  source         = "../../child module/azurerm_internal_load_balancer"
+  load_balancers = var.internal_load_balancers
+}
+
+module "azurerm_application_gateway" {
+  source               = "../../child module/azurerm_application_gateway"
+  application_gateways = var.application_gateways
+}
